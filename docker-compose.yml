@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    image: ctf-filterchain:latest
+    restart: unless-stopped
+    # volumes:
+    #   - ./static:/var/www/html
+    environment:
+      - TZ=Asia/Shanghai
+      - FLAG=flag{example_real_flag}
+    ports:
+      - "8000:80"
