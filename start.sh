@@ -1,5 +1,5 @@
 if [ ! -f "/flag" ]; then
-    echo "$FLAG" > /flag
+    echo -n "$FLAG" > /flag
     chmod 600 /flag
 fi
 export FLAG=

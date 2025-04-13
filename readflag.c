@@ -18,7 +18,7 @@ int main() {
     }
 
     while (fgets(buf, sizeof(buf), file) != NULL) {
-        puts(buf);
+        printf("%s", buf);
     }
 
     fclose(file);
