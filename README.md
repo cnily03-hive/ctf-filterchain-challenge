@@ -34,7 +34,7 @@ Visit `index.php` and try to leak content of `flag.php`, by using [synacktiv/php
 python3 filters_chain_oracle_exploit.py --target http://host:port/ --verb POST --parameter file --file ./flag.php
 ```
 
-The first few lines tell that passing the specific GET value can show the source code.
+The first few lines of `flag.php` tell that passing the specific GET value can show the source code.
 
 The idea to RCE is to write a WebShell file. We can use filter chain again.
 
@@ -44,7 +44,7 @@ php://filter/read=.../resource=shell.php
 
 Firstly, pass `php://filter/resource=shell.php` to generate an empty file.
 
-Then We need filter chain to create something out of nothing, into `shell.php`.
+Then we need filter chain to create something out of nothing, into `shell.php`.
 
 But the whole chain is too long to be passed to URL payload. We can split it. For example, for chain `A|B|C` we can split it to 3 requests, passing `A`, `B` and `C` respectively.
 
